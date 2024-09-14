@@ -1,8 +1,12 @@
+"use client";
 import Image from "next/image";
 import homeImage from "@/assets/reading2.png";
 import { Button } from "antd";
 
+import { useRouter } from "next/navigation";
+
 export default function Home() {
+  const router = useRouter();
   return (
     <div className="flex items-center" style={{ height: "100vh" }}>
       <div style={{ width: "60vw" }} className="p-10">
@@ -20,17 +24,32 @@ export default function Home() {
             engaging, and accessible for everyone.
           </p>
         </div>
-        <Button
-          style={{
-            marginTop: "50px",
-            backgroundColor: "orange",
-            color: "white",
-            fontWeight: "bold",
-            padding: "20px",
-          }}
-        >
-          Continue
-        </Button>
+        <div className="space-x-4">
+          <Button
+            onClick={() => router.push("/home")}
+            style={{
+              marginTop: "50px",
+              backgroundColor: "orange",
+              color: "white",
+              fontWeight: "bold",
+              padding: "20px",
+            }}
+          >
+            Continue
+          </Button>
+          <Button
+            onClick={() => router.push("/authentication")}
+            style={{
+              marginTop: "50px",
+              backgroundColor: "blue",
+              color: "white",
+              fontWeight: "bold",
+              padding: "20px",
+            }}
+          >
+            Login/SignUp
+          </Button>
+        </div>
       </div>
 
       <Image
