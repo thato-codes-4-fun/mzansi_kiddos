@@ -16,10 +16,10 @@ const HeaderComponent = () => {
           />
         </div>
         <div className="flex space-x-10 items-center" style={{ height: 100 }}>
-          <p>Home</p>
-          <p>About</p>
-          <p>Stories</p>
-          <p>Contact Us</p>
+          <a>Home</a>
+          <a>About</a>
+          <a>Stories</a>
+          <a>Contact Us</a>
           <Button
             style={{
               marginLeft: "100px",

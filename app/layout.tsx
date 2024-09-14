@@ -4,6 +4,9 @@ import "./globals.css";
 import { Layout } from "antd";
 import { Content, Footer, Header } from "antd/es/layout/layout";
 import HeaderComponent from "./(components)/header";
+import Image from "next/image";
+
+import logo from "@/assets/logo2.png";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,18 +34,18 @@ const headerStyle: React.CSSProperties = {
 };
 
 const contentStyle: React.CSSProperties = {
-  textAlign: "center",
+  // textAlign: "center",
   minHeight: "85vh",
   maxHeight: "100vh",
   lineHeight: "120px",
-  color: "#fff",
+  // color: "#fff",
   backgroundColor: "white",
 };
 
 const footerStyle: React.CSSProperties = {
   textAlign: "center",
-  color: "#fff",
-  backgroundColor: "#4096ff",
+  // color: "#fff",
+  // backgroundColor: "#4096ff",
 };
 
 export default function RootLayout({
@@ -55,12 +58,24 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Layout>
-          <Header className="p-2" style={headerStyle}>
+        <Layout className="p-2">
+          <Header className="" style={headerStyle}>
             <HeaderComponent />
           </Header>
           <Content style={contentStyle}>{children}</Content>
-          <Footer style={footerStyle}>This is a footer</Footer>
+          <Footer style={footerStyle} className="items-center">
+            <div className="flex justify-around items-center">
+              <div style={{ height: 100 }}>
+                <Image
+                  src={logo}
+                  width={100}
+                  height={100}
+                  alt="Picture of the MzansiKiddosLogo"
+                />
+              </div>
+              <h2>Mzansi Kiddos (PTYLTD) ©</h2>
+            </div>
+          </Footer>
         </Layout>
       </body>
     </html>
