@@ -1,6 +1,7 @@
 import { Button, Row } from "antd";
 import React from "react";
 import Image from "next/image";
+import Link from 'next/link'
 
 import logo from "@/assets/logo2.png";
 const HeaderComponent = () => {
@@ -16,10 +17,10 @@ const HeaderComponent = () => {
           />
         </div>
         <div className="flex space-x-10 items-center" style={{ height: 100 }}>
-          <a>Home</a>
-          <a>About</a>
-          <a>Stories</a>
-          <a>Contact Us</a>
+          <Link href="/">Home</Link>
+          <Link href="/stories">Stories</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact-us">Contact us</Link>
           <Button
             style={{
               marginLeft: "100px",
